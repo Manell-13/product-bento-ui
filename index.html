@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Bento UI – NovaErgo Chair</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css" rel="stylesheet">
+</head>
+<body>
+    <div class="app">
+
+        <!-- NAVBAR -->
+        <header class="navbar">
+            <div class="navbar__brand">
+                <span class="navbar__logo">N</span>
+                <span class="navbar__name">NovaErgo</span>
+            </div>
+
+            <form class="navbar__search" action="#" role="search">
+                <input type="search" placeholder="Search chairs..." aria-label="Search chairs">
+                <button type="submit">🔍</button>
+            </form>
+
+            <div class="navbar__actions">
+                <button class="icon-btn" aria-label="Wishlist">
+                    <i class="ri-heart-line"></i>
+                </button>
+
+                <button class="icon-btn" aria-label="Cart">
+                    <span class="ri-shopping-cart-line"></span>
+                </button>
+
+                <button class="icon-btn" aria-label="User account">
+                    <span class="ri-user-line"></span>
+                </button>
+            </div>
+        </header>
+
+        <!-- BENTO GRID -->
+        <main class="bento-grid">
+
+        <!-- HERO / MAIN PRODUCT CARD (texto + imagen) -->
+        <section class="bento-card bento-card--hero">
+            <div class="hero__content">
+                <header class="hero__header">
+                    <p class="hero__label">Ergonomic chair</p>
+                    <h1 class="hero__title">NovaErgo – Inspiring Comfort.</h1>
+                    <p class="hero__subtitle">Designed for long creative sessions.</p>
+                </header>
+
+                <p class="hero__description">
+                    Premium ergonomic support with 4D armrests, adjustable lumbar system,
+                    and a breathable mesh backrest for all–day comfort.
+                </p>
+
+                <div class="hero__actions">
+                    <button class="btn btn--primary">Add to Cart →</button>
+                    <span class="hero__meta">01</span>
+                </div>
+
+                <div class="hero__social">
+                    <span>Follow us</span>
+                    <ul>
+                        <li><a href="#">X</a></li>
+                        <li><a href="#">Instagram</a></li>
+                        <li><a href="#">TikTok</a></li>
+                        <li><a href="#">YouTube</a></li>
+                        <li><a href="#">LinkedIn</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="hero__media">
+                <img
+                    src="img/color_black/NovaErgo_01_black.png"
+                    alt="NovaErgo ergonomic chair in Graphite Black"
+                >
+            </div>
+        </section>
+
+            <!-- POPULAR COLORS -->
+            <section class="bento-card bento-card--colors">
+                <h2 class="card-title">Popular Colors</h2>
+                <div class="colors">
+                    <button class="color-dot color-dot--black" aria-label="Graphite Black"></button>
+                    <button class="color-dot color-dot--blue" aria-label="Ocean Blue"></button>
+                    <button class="color-dot color-dot--green" aria-label="Forest Green"></button>
+                </div>
+            </section>
+
+            <!-- MORE MODELS -->
+            <section class="bento-card bento-card--more-models">
+                <header class="card-header">
+                    <div>
+                        <h2 class="card-title">More Models</h2>
+                        <p class="card-subtitle">12+ variations available.</p>
+                    </div>
+                    <button class="icon-btn" aria-label="Add to wishlist">❤️</button>
+                </header>
+
+                <div class="models-thumbnails">
+                    <img src="" alt="">
+                    <img src="" alt="">
+                    <img src="" alt="">
+                </div>
+            </section>
+
+            <!-- REVIEWS -->
+            <section class="bento-card bento-card--reviews">
+                <div class="badge badge--highlight">Popular</div>
+
+                <div class="reviews__score">
+                    <span class="reviews__stars">⭐ 4.8 / 5.0</span>
+                    <p class="reviews__text">Over 320 verified reviews.</p>
+                </div>
+
+                <div class="reviews__avatars">
+                    <img src="img/avatars/avatar-1.png" alt="Customer review avatar">
+                    <img src="img/avatars/avatar-2.png" alt="Customer review avatar">
+                    <img src="img/avatars/avatar-3.png" alt="Customer review avatar">
+                </div>
+            </section>
+
+            <!-- FEATURE CARD – ERGO+ SYSTEM -->
+            <section class="bento-card bento-card--feature">
+                <div class="badge">New</div>
+
+                <h2 class="card-title">Ergo+ System Released</h2>
+                <p class="card-subtitle">
+                    The enhanced lumbar module with improved flexibility and deeper back support.
+                </p>
+
+                <div class="feature__footer">
+                    <span class="feature__rating">⭐ 4.9</span>
+                    <img
+                        src=""
+                        alt="Detail of NovaErgo lumbar support"
+                        class="feature__thumb"
+                    >
+                </div>
+            </section>
+
+            <!-- ACCESSORY – ARMREST PRO -->
+            <section class="bento-card bento-card--accessory accessory--armrest">
+                <h2 class="card-title">NovaErgo – Armrest Pro</h2>
+                <p class="card-subtitle">
+                    Next-gen 4D armrest with improved precision and soft padding.
+                </p>
+
+                <div class="accessory__footer">
+                    <button class="icon-btn" aria-label="View Armrest Pro details">→</button>
+                    <img
+                        src="img/accessories/armrest-pro.png"
+                        alt="NovaErgo Armrest Pro accessory"
+                        class="accessory__image"
+                    >
+                </div>
+            </section>
+
+            <!-- ACCESSORY – FOOTREST -->
+            <section class="bento-card bento-card--accessory accessory--footrest">
+                <img
+                    src="img/accessories/footrest.png"
+                    alt="NovaErgo adjustable footrest"
+                    class="accessory__image accessory__image--large"
+                >
+                <div class="accessory__content">
+                    <h2 class="card-title">NovaErgo Footrest</h2>
+                    <p class="card-subtitle">Perfect ergonomic support for your posture.</p>
+                    <p class="card-description">
+                        Boost comfort with a premium adjustable footrest designed
+                        to complement the NovaErgo Chair.
+                    </p>
+                    <button class="icon-btn" aria-label="View footrest details">→</button>
+                </div>
+            </section>
+
+        </main>
+    </div>
+</body>
+</html>
