@@ -1,12 +1,13 @@
-body {
-    background: linear-gradient(
-        to bottom,
-        #e6eaef 0%,
-        #f2f3ee 40%,
-        #dbcef4 100% 
-    );
-    padding: 1rem 5rem 2rem 5rem;
+body{
+    margin: 0;
+    min-height: 100vh;
+    background: linear-gradient(to bottom, #f1f4f7 10%, #d8d9d4 50%, #dbcef4 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5rem;
 }
+
 
 /* BENTO GRID */
 .bento-grid {
@@ -41,30 +42,186 @@ body {
     box-shadow: 0 8px 20px rgba(0,0,0,0.06);
 }
 
-.hero__media img{
-    width: 24.5rem;
-    height: auto;
-}
-
+/***************************/
 /* NAVBAR */
 .navbar{
     margin-bottom: 1rem;
 }
 
+/***************************/
 /* HERO */
+.bento-card--hero{
+    display: grid;
+    grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr); /*texto - imagen*/
+    padding: 1.25rem;
+    align-items: center;
+    padding-left: 2.5rem;
+}
+
+.hero__content{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    height: 100%;
+    margin: 0rem;
+}
+
+.hero__media{
+    display: flex;
+    place-items: center;
+    justify-content: flex-start;
+    height: 100%;
+
+}
+
+.hero__media img{
+    width: min(520px, 110%);   
+    height: auto;
+    object-fit: contain;
+    transform: translateY(6px);
+}
+
+.hero__label{
+    display: inline-flex;
+    align-items: center;
+    gap: .5rem;
+    padding: .55rem 1rem;
+    border-radius: 999px;
+    background: rgba(255,255,255,0.75);
+    border: 1px solid rgba(255,255,255,0.55);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+    width: fit-content;   
+    margin: 0;            
+    line-height: 1;
+}
+
+.hero__label i{
+    font-size: 1.1rem;
+    opacity: .75;
+}
+
+.hero__title{
+    font-size: 3.5rem;
+    line-height: 1;
+    margin-top: 20px;
+}
+
+.hero__subrow{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-top: .25rem;
+}
+
+.hero__meta{
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: rgba(0,0,0,0.20); 
+    line-height: 1;
+}
+
+.hero__line{
+    height: 1px;
+    background: rgba(0,0,0,0.18);
+    flex: 1;                  
+    max-width: 140px;        
+}
+
+.hero__microcopy{
+    display: flex;
+    flex-direction: column;
+    gap: .15rem;
+    max-width: 240px;
+}
+
+.hero__microtitle{
+    margin: 0;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #a980f5;
+    
+}
+
+.hero__microdesc{
+    margin: 0;
+    font-size: .9rem;
+    line-height: 1.35;
+    color: rgba(0,0,0,0.55);
+}
+
+.hero__description{
+    color: rgba(0,0,0,0.55);
+    font-size: 1.1rem;
+}
+
+/*hero-social*/
+.hero__social{
+    margin-top: auto;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.hero__social ul {
+    padding: 0rem 1rem 0rem 0.7rem;
+}
+
+.hero__social li {
+    list-style: none;
+    display: inline-flex;
+}
+
+.hero__social a {
+    text-decoration: none;
+    font-size: 1.5rem;
+    color: #a980f5;
+    padding-right: 0.5rem;
+}
+
+/*Boton Add to cart*/
+.btn--primary{
+    background-color: #a980f5;
+    border: none;
+    padding: 0.5rem 0.5rem 0.5rem 1.5rem;
+    border-radius: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    font-size: 0.9rem;
+    cursor: pointer;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+}
+
+.arrow-view-all{
+    font-size: 1.3rem;
+    background-color: #dbcef4;
+    border-radius: 2rem;
+    padding: 0.3rem;
+}
 
 
 
+/***************************/
 /* POPULAR COLORS */
 
 
+
+/***************************/
 /* MORE MODELS */
 
 
+
+/***************************/
 /* REVIEWS */ 
 
 
+
+/***************************/
 /* FEATURE CARD - ERGO + SYSTEM */
 
 
+
+/***************************/
 /* ACCESSORY - FOOTREST */ 
