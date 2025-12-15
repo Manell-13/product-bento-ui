@@ -1,51 +1,197 @@
+*, *::before, *::after { box-sizing: border-box; }
+html, body { overflow-x: hidden; }
+
 body{
     margin: 0;
     min-height: 100vh;
-    background: linear-gradient(to bottom, #f1f4f7 10%, #d8d9d4 50%, #dbcef4 100%);
+    background:
+        radial-gradient(circle at 15% 10%, rgba(255,255,255,0.65), transparent 45%),
+        radial-gradient(circle at 85% 90%, rgba(219,206,244,0.55), transparent 55%),
+        linear-gradient(to bottom, #f1f4f7 10%, #d8d9d4 55%, #dbcef4 100%);
     display: flex;
     justify-content: center;
-    align-items: center;
-    padding: 5rem;
+    align-items: center;    
+    padding: 2rem 0rem;
+}
+
+.app{
+    width: min(1280px, calc(100vw - 6rem));
+    padding-inline: 1.5rem;
+    display: grid;
+    gap: 1rem;
 }
 
 
 /* BENTO GRID */
 .bento-grid {
     display: grid;
-    gap: 1.5rem;
+    gap: 1.25rem;
 
     grid-template-columns: 2fr 1.6fr 1.8fr 1.4fr;
     grid-auto-rows: minmax(100px, auto);
 
     grid-template-areas:
-        "hero        hero        hero        colors"
-        "hero        hero        hero        accessory1"
-        "hero        hero        hero        accessory1"
-        "more-models reviews     accessory2  feature";
+        "hero     hero      hero      colors"
+        "hero     hero      hero      accessory1"
+        "hero     hero      hero      accessory1"
+        "reviews  accessory2 accessory2 feature";
 }
 
 .bento-card--hero        { grid-area: hero; }
 .bento-card--colors      { grid-area: colors; }
-.bento-card--more-models { grid-area: more-models; }
 .bento-card--reviews     { grid-area: reviews; }
 .bento-card--feature     { grid-area: feature; }
 .accessory--armrest      { grid-area: accessory1; }
 .accessory--footrest     { grid-area: accessory2; }
 
 .bento-card, .navbar{
-    background: rgba(255, 255, 255, 0.55);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-    border: 1px solid rgba(255, 255, 255, 0.4);
-    border-radius: 24px;
+    background: rgba(255,255,255,0.38);
+    border: 1px solid rgba(255,255,255,0.40);
+    border-radius: 26px;
+
+    backdrop-filter: blur(22px);
+    -webkit-backdrop-filter: blur(22px);
+
+    box-shadow:
+        0 14px 30px rgba(0,0,0,0.08),
+        0 2px 0 rgba(255,255,255,0.25) inset;
+
     padding: 1.5rem;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+    transition: transform .18s ease, box-shadow .18s ease;
+}
+
+.bento-card:hover{
+    transform: translateY(-2px);
+    box-shadow:
+        0 20px 45px rgba(0,0,0,0.10),
+        0 2px 0 rgba(255,255,255,0.25) inset;
 }
 
 /***************************/
 /* NAVBAR */
+/***************************/
+/* NAVBAR (estilo referencia) */
+
 .navbar{
-    margin-bottom: 1rem;
+    padding: .55rem .75rem;      
+    border-radius: 999px;        
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+/* BRAND (izquierda) */
+.navbar__brand{
+    display: flex;
+    align-items: center;
+    gap: .6rem;
+
+    padding: .35rem .75rem;
+    border-radius: 999px;
+
+    background: rgba(255,255,255,0.45);
+    border: 1px solid rgba(255,255,255,0.55);
+}
+
+.navbar__logo{
+    width: 30px;
+    height: 30px;
+    border-radius: 999px;
+    display: grid;
+    place-items: center;
+
+    background: rgba(255,255,255,0.70);
+    border: 1px solid rgba(0,0,0,0.08);
+    font-weight: 700;
+}
+
+.navbar__name{
+    font-weight: 600;
+    font-size: .95rem;
+    color: rgba(0,0,0,0.80);
+}
+
+/* SEARCH (centro) */
+.navbar__search{
+    flex: 1;
+    min-width: 0;              
+    display: flex;
+    justify-content: center;
+}
+
+.navbar__search{
+    position: relative;
+    width: 100%;
+    max-width: 560px;
+}
+
+.navbar__search input{
+    width: 100%;
+    min-width: 0;
+    height: 44px;
+
+    border-radius: 999px;
+    border: 1px solid rgba(0,0,0,0.10);
+    background: rgba(255,255,255,0.70);
+
+    padding: 0 3.2rem 0 1rem;   
+    outline: none;
+}
+
+.navbar__search button{
+    position: absolute;
+    top: 50%;
+    right: 6px;
+    transform: translateY(-50%);
+
+    width: 36px;
+    height: 36px;
+    border-radius: 999px;
+
+    border: none;
+    color: white;
+
+    display: grid;
+    place-items: center;
+    cursor: pointer;
+}
+
+.navbar__search button:hover{
+    background-color: #a980f570;
+}
+
+/* ACTIONS (derecha) */
+.navbar__actions{
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+
+    padding: .35rem .5rem;
+    border-radius: 999px;
+
+    background: rgba(255,255,255,0.45);
+    border: 1px solid rgba(255,255,255,0.55);
+}
+
+.icon-btn{
+    width: 38px;
+    height: 38px;
+    border-radius: 999px;
+
+    background: rgba(255,255,255,0.75);
+    border: 1px solid rgba(0,0,0,0.10);
+
+    display: grid;
+    place-items: center;
+    cursor: pointer;
+
+    transition: transform .15s ease, box-shadow .15s ease;
+}
+
+.icon-btn:hover{
+    transform: translateY(-1px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.10);
 }
 
 /***************************/
@@ -75,13 +221,13 @@ body{
 }
 
 .hero__media img{
-    width: min(520px, 110%);   
+    max-width: 100%;
+    width: min(520px, 100%);   
     height: auto;
-    object-fit: contain;
-    transform: translateY(6px);
+
 }
 
-.hero__label{
+.hero__label, .badge{
     display: inline-flex;
     align-items: center;
     gap: .5rem;
@@ -93,6 +239,7 @@ body{
     width: fit-content;   
     margin: 0;            
     line-height: 1;
+    color: rgba(0,0,0,0.50);
 }
 
 .hero__label i{
@@ -205,23 +352,151 @@ body{
 
 /***************************/
 /* POPULAR COLORS */
+.colors{
+    display: flex;
+    gap: .9rem;
+    align-items: center;
+    justify-content: center;
+    margin-top: 2rem;
+}
 
+.color-dot{
+    width: 45px;
+    height: 45px;
+    padding: 10px;  
+    border-radius: 999px; 
+    background-color: 2px solid rgba(255,255,255,0.9);
+    border: none;
+    cursor: pointer;
 
+    box-shadow: 
+        0 6px 14px rgba(0, 0, 0, 0.08),
+        inset 0 0 0 1px rgba(0, 0, 0, 0.4)
+    ;
 
-/***************************/
-/* MORE MODELS */
+    display: grid;
+    place-items: center;
 
+    transition: transform .2s ease, box-shadow .2s ease;
+}
+
+.color-dot::before{
+    content: "";
+    width: 25px;
+    height: 25px;
+    border-radius: 999px;
+    background: var(--dot-color);
+}
+
+.color-dot--black{ 
+    --dot-color: #49494a;
+}
+
+.color-dot--blue{ 
+    --dot-color: #657aa1;
+}
+
+.color-dot--green{ 
+    --dot-color: #718a6f;
+}
+
+.color-dot:hover{
+    transform: translateY(-1px);
+    box-shadow:
+        0 10px 22px rgba(0,0,0,0.12),
+        inset 0 0 0 1px rgba(0,0,0,0.05);
+}
+
+.color-dot:focus-visible{
+    outline: 3px solid rgba(169,128,245,0.45);
+    outline-offset: 3px;
+}
 
 
 /***************************/
 /* REVIEWS */ 
-
-
+.reviews__avatars{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.reviews__avatars img{
+    width: 20rem;
+    height: auto;
+}
 
 /***************************/
 /* FEATURE CARD - ERGO + SYSTEM */
+.feature__footer img{
+    width: 100px;
+    height: auto;
+}
 
+/***************************/
+/* ACCESSORY – ARMREST PRO */
+
+.accessory--armrest img{
+    width: 100px;   
+    height: auto;
+}
 
 
 /***************************/
 /* ACCESSORY - FOOTREST */ 
+
+
+.bento-card--accessory-main{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+}
+
+.accessory--footrest img{
+    width: 200px;
+    height: 200px;
+}
+
+.card-title{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+}
+
+.btn-accessory{
+    background-color: #a980f5;
+    border: none;
+    padding: 0.5rem;
+    width: 100%;
+    border-radius: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    font-size: 1rem;
+    cursor: pointer;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+
+}
+
+/*Efectos bento-card*/
+.bento-card--hero,
+.bento-card--feature,
+.accessory--footrest{
+    position: relative;
+    overflow: hidden;
+}
+
+.bento-card--hero::before,
+.bento-card--feature::before,
+.accessory--footrest::before{
+    content:"";
+    position:absolute;
+    inset:-40%;
+    background: radial-gradient(circle at 30% 30%, rgba(169,128,245,0.28), transparent 55%),
+                radial-gradient(circle at 70% 70%, rgba(255,255,255,0.22), transparent 60%);
+    pointer-events:none;
+    filter: blur(2px);
+}
