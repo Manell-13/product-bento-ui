@@ -8,6 +8,7 @@
     <link href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css" rel="stylesheet">
     <!-- fuentes -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="app.js" defer></script>
 </head>
 <body>
     <div class="app">
@@ -84,8 +85,9 @@
 
             <div class="hero__media">
                 <img
-                    src="img/color_black/NovaErgo_05_black.png"
+                    src="img/novaergo/NovaErgo_01_black_bg_eliminado.png"
                     alt="NovaErgo ergonomic chair in Graphite Black"
+                    id="mainImage" 
                 >
             </div>
         </section>
@@ -94,9 +96,9 @@
             <section class="bento-card bento-card--colors">
                 <h2 class="card-title">Popular Colors</h2>
                 <div class="colors">
-                    <button class="color-dot color-dot--black" aria-label="Graphite Black"></button>
-                    <button class="color-dot color-dot--blue" aria-label="Ocean Blue"></button>
-                    <button class="color-dot color-dot--green" aria-label="Forest Green"></button>
+                    <button class="color-dot color-dot--black btn-selected" data-color="black" aria-label="Graphite Black"></button>
+                    <button class="color-dot color-dot--blue"  data-color="blue"  aria-label="Ocean Blue"></button>
+                    <button class="color-dot color-dot--green" data-color="green" aria-label="Forest Green"></button>
                 </div>
             </section>
             
